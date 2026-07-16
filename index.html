@@ -3,78 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أجواء الواحة - عصائر ومرطبات</title>
+    <title>أجواء الواحة - طلبات أونلاين</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #fdf6e3; margin: 0; padding: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #fdf6e3; padding: 10px; }
         .container { max-width: 500px; margin: auto; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .header { text-align: center; color: #8b6e3c; }
-        .phone-box { background: #eee; text-align: center; padding: 10px; border-radius: 8px; margin: 10px 0; font-weight: bold; }
-        .category { font-weight: bold; color: #d35400; margin: 20px 0 10px; border-bottom: 2px solid #d35400; padding-bottom: 5px; }
+        .category { font-weight: bold; color: #d35400; margin: 20px 0 10px; border-bottom: 2px solid #d35400; }
         .item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f1f1; }
-        .item-info { flex-grow: 1; text-align: right; margin-right: 10px; }
-        .controls { display: flex; align-items: center; gap: 5px; }
-        input { width: 40px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
-        button { background-color: #27ae60; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
-        .send-order { background: #25d366; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 18px; margin-top: 20px; font-weight: bold; }
+        .send-order { background: #25d366; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>🌴 أجواء الواحة 🌴</h1>
-        <div class="phone-box">📞 تواصل معنا: 0789525274</div>
-    </div>
+    <h1 style="text-align: center;">🌴 أجواء الواحة 🌴</h1>
 
-    <!-- الأفوكادو والكوكتيل -->
+    <!-- الأصناف مع الإيموجي -->
     <div class="category">🥑 الأفوكادو والكوكتيل</div>
-    <div class="item"><div class="item-info">أفوكادو سبيشل كبير<br><small>3.75 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">أفوكادو سبيشل صغير<br><small>3.25 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">أفوكادو سادة كبير<br><small>3.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">أفوكادو سادة صغير<br><small>2.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">كوكتيل سبيشل كبير<br><small>3.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>🥑 أفوكادو سبيشل كبير - 3.75 دينار</span></div>
+    <div class="item"><span>🥑 أفوكادو سبيشل صغير - 3.25 دينار</span></div>
+    <div class="item"><span>🍹 كوكتيل سبيشل كبير - 3.50 دينار</span></div>
 
-    <!-- قسم العوار -->
-    <div class="category">🍹 قسم العوار والخلطات الخاصة</div>
-    <div class="item"><div class="item-info">كوكتيل أجواء (3)<br><small>4.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">كوكتيل أجواء (2)<br><small>3.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">موار قلب كبير<br><small>3.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="category">🍹 قسم العوار والخلطات</div>
+    <div class="item"><span>🍸 كوكتيل أجواء (3) - 4.00 دينار</span></div>
+    <div class="item"><span>❤️ موار قلب كبير - 3.50 دينار</span></div>
 
-    <!-- الموهيتو والمشروبات الباردة -->
-    <div class="category">🧊 الموهيتو والمشروبات الباردة</div>
-    <div class="item"><div class="item-info">موهيتو روم<br><small>2.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">موهيتو صوبيا<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بي أم موهيتو كبير<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">موهيتو ماتريكس<br><small>1.75 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">سلاش<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">كولا<br><small>2.25 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">كود رد<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="category">🧊 الموهيتو والمشروبات</div>
+    <div class="item"><span>🍹 موهيتو روم - 2.50 دينار</span></div>
+    <div class="item"><span>⚡ كود رد - 2.00 دينار</span></div>
+    <div class="item"><span>🥤 كولا - 2.25 دينار</span></div>
 
-    <!-- البوظة -->
-    <div class="category">🍦 سلطات الفواكه والبوظة</div>
-    <div class="item"><div class="item-info">سلطة فواكه أجواء<br><small>4.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">سلطة فواكه سبيشل<br><small>3.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">كيلو بوظة<br><small>7.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">نصف كيلو بوظة<br><small>4.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بوظة سكوب (1)<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بوظة صحن بسكوت<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بوظة بوري<br><small>1.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بوظة سكوب صغير<br><small>1.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بوظة سوفت صغير<br><small>1.25 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">بوشار كبير<br><small>1.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="category">🍦 البوظة والسناكات</div>
+    <div class="item"><span>🍦 كيلو بوظة - 7.00 دينار</span></div>
+    <div class="item"><span>🍿 بوشار كبير - 1.50 دينار</span></div>
+    <div class="item"><span>🍔 برجر زنجر - 2.00 دينار</span></div>
 
-    <!-- الوجبات السريعة -->
-    <div class="category">🍟 الوجبات السريعة والسناكات</div>
-    <div class="item"><div class="item-info">برجر زنجر<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">تشكن فرايز<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">ذرة<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">سكالوب<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">سكالوب كبير<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">أكوكيات كبير<br><small>2.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">سلاش سوور<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><div class="item-info">ذرة سادة سبيشل<br><small>3.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-
-    <button class="send-order">إرسال الطلب عبر واتساب</button>
+    <!-- زر الواتساب برقمك -->
+    <a href="https://wa.me/962789525274?text=مرحبا، أريد طلب من أجواء الواحة:" target="_blank">
+        <button class="send-order">إرسال الطلب عبر واتساب 📲</button>
+    </a>
 </div>
 
 </body>
