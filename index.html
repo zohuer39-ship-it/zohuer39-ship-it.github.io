@@ -5,62 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أجواء الواحة - عصائر ومرطبات</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #fff9e6; padding: 20px; }
-        .menu-container { max-width: 500px; margin: auto; }
-        .item { background: white; margin-bottom: 10px; padding: 10px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; }
-        h1 { color: #d4a017; }
-        h2 { color: #d4a017; margin-top: 20px; }
-        button { background-color: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #fdf6e3; margin: 0; padding: 10px; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; color: #8b6e3c; }
+        .phone-box { background: #eee; text-align: center; padding: 10px; border-radius: 8px; margin: 10px 0; font-weight: bold; }
+        .category { font-weight: bold; color: #d35400; margin: 20px 0 10px; border-bottom: 2px solid #d35400; padding-bottom: 5px; }
+        .item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f1f1; }
+        .item-info { flex-grow: 1; text-align: right; margin-right: 10px; }
+        .controls { display: flex; align-items: center; gap: 5px; }
+        input { width: 40px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
+        button { background-color: #27ae60; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+        .send-order { background: #25d366; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 18px; margin-top: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <h1>أجواء الواحة</h1>
-
-    <div class="menu-container">
-        <h2>الأفوكادو والكوكتيل</h2>
-        <div class="item"><span>أفوكادو سبيشل كبير (3.75)</span><button>اطلب</button></div>
-        <div class="item"><span>أفوكادو سبيشل صغير (3.25)</span><button>اطلب</button></div>
-        <div class="item"><span>أفوكادو سادة كبير (3.00)</span><button>اطلب</button></div>
-        <div class="item"><span>أفوكادو سادة صغير (2.50)</span><button>اطلب</button></div>
-        <div class="item"><span>كوكتيل سبيشل كبير (3.50)</span><button>اطلب</button></div>
-
-        <h2>قسم العوار والخلطات الخاصة</h2>
-        <div class="item"><span>كوكتيل أجواء (3) (4.00)</span><button>اطلب</button></div>
-        <div class="item"><span>كوكتيل أجواء (2) (3.00)</span><button>اطلب</button></div>
-        <div class="item"><span>موار قلب كبير (3.50)</span><button>اطلب</button></div>
-
-        <h2>الموهيتو والمشروبات الباردة</h2>
-        <div class="item"><span>موهيتو روم (2.50)</span><button>اطلب</button></div>
-        <div class="item"><span>موهيتو صوبيا (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>بي أم موهيتو كبير (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>موهيتو ماتريكس (1.75)</span><button>اطلب</button></div>
-        <div class="item"><span>سلاش (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>كولا (2.25)</span><button>اطلب</button></div>
-        <div class="item"><span>كود رد (2.00)</span><button>اطلب</button></div>
-
-        <h2>سلطات الفواكه والبوظة</h2>
-        <div class="item"><span>سلطة فواكه أجواء (4.00)</span><button>اطلب</button></div>
-        <div class="item"><span>سلطة فواكه سبيشل (3.50)</span><button>اطلب</button></div>
-        <div class="item"><span>كيلو بوظة (7.00)</span><button>اطلب</button></div>
-        <div class="item"><span>نصف كيلو بوظة (4.00)</span><button>اطلب</button></div>
-        <div class="item"><span>بوظة سكوب (1) (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>بوظة صحن بسكوت (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>بوظة بوري (1.50)</span><button>اطلب</button></div>
-        <div class="item"><span>بوظة سكوب صغير (1.50)</span><button>اطلب</button></div>
-        <div class="item"><span>بوظة سوفت صغير (1.25)</span><button>اطلب</button></div>
-        <div class="item"><span>بوشار كبير (1.50)</span><button>اطلب</button></div>
-
-        <h2>الوجبات السريعة</h2>
-        <div class="item"><span>برجر زنجر (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>تشكن فرايز (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>ذرة (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>سكالوب (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>سكالوب كبير (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>أكوكيات كبير (2.50)</span><button>اطلب</button></div>
-        <div class="item"><span>سلاش سوور (2.00)</span><button>اطلب</button></div>
-        <div class="item"><span>ذرة سادة سبيشل (3.00)</span><button>اطلب</button></div>
+<div class="container">
+    <div class="header">
+        <h1>🌴 أجواء الواحة 🌴</h1>
+        <div class="phone-box">📞 تواصل معنا: 0789525274</div>
     </div>
+
+    <!-- الأفوكادو والكوكتيل -->
+    <div class="category">🥑 الأفوكادو والكوكتيل</div>
+    <div class="item"><div class="item-info">أفوكادو سبيشل كبير<br><small>3.75 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">أفوكادو سبيشل صغير<br><small>3.25 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">أفوكادو سادة كبير<br><small>3.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">أفوكادو سادة صغير<br><small>2.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">كوكتيل سبيشل كبير<br><small>3.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+
+    <!-- قسم العوار -->
+    <div class="category">🍹 قسم العوار والخلطات الخاصة</div>
+    <div class="item"><div class="item-info">كوكتيل أجواء (3)<br><small>4.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">كوكتيل أجواء (2)<br><small>3.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">موار قلب كبير<br><small>3.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+
+    <!-- الموهيتو والمشروبات الباردة -->
+    <div class="category">🧊 الموهيتو والمشروبات الباردة</div>
+    <div class="item"><div class="item-info">موهيتو روم<br><small>2.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">موهيتو صوبيا<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بي أم موهيتو كبير<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">موهيتو ماتريكس<br><small>1.75 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">سلاش<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">كولا<br><small>2.25 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">كود رد<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+
+    <!-- البوظة -->
+    <div class="category">🍦 سلطات الفواكه والبوظة</div>
+    <div class="item"><div class="item-info">سلطة فواكه أجواء<br><small>4.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">سلطة فواكه سبيشل<br><small>3.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">كيلو بوظة<br><small>7.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">نصف كيلو بوظة<br><small>4.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بوظة سكوب (1)<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بوظة صحن بسكوت<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بوظة بوري<br><small>1.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بوظة سكوب صغير<br><small>1.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بوظة سوفت صغير<br><small>1.25 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">بوشار كبير<br><small>1.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+
+    <!-- الوجبات السريعة -->
+    <div class="category">🍟 الوجبات السريعة والسناكات</div>
+    <div class="item"><div class="item-info">برجر زنجر<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">تشكن فرايز<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">ذرة<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">سكالوب<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">سكالوب كبير<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">أكوكيات كبير<br><small>2.50 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">سلاش سوور<br><small>2.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><div class="item-info">ذرة سادة سبيشل<br><small>3.00 دينار</small></div><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+
+    <button class="send-order">إرسال الطلب عبر واتساب</button>
+</div>
 
 </body>
 </html>
