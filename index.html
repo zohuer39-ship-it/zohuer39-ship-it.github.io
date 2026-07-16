@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أجواء الواحة - طلبات أونلاين</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #fdf6e3; padding: 10px; }
+        body { font-family: sans-serif; background-color: #fdf6e3; padding: 10px; }
         .container { max-width: 500px; margin: auto; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .category { font-weight: bold; color: #d35400; margin: 20px 0 10px; border-bottom: 2px solid #d35400; }
         .item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f1f1; }
+        .controls { display: flex; align-items: center; gap: 5px; }
+        input { width: 40px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
+        button { background-color: #27ae60; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
         .send-order { background: #25d366; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
@@ -17,27 +20,29 @@
 <div class="container">
     <h1 style="text-align: center;">🌴 أجواء الواحة 🌴</h1>
 
-    <!-- الأصناف مع الإيموجي -->
+    <!-- قسم الأفوكادو -->
     <div class="category">🥑 الأفوكادو والكوكتيل</div>
-    <div class="item"><span>🥑 أفوكادو سبيشل كبير - 3.75 دينار</span></div>
-    <div class="item"><span>🥑 أفوكادو سبيشل صغير - 3.25 دينار</span></div>
-    <div class="item"><span>🍹 كوكتيل سبيشل كبير - 3.50 دينار</span></div>
+    <div class="item"><span>🥑 أفوكادو سبيشل كبير (3.75)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>🥑 أفوكادو سبيشل صغير (3.25)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>🍹 كوكتيل سبيشل كبير (3.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
 
+    <!-- قسم العوار -->
     <div class="category">🍹 قسم العوار والخلطات</div>
-    <div class="item"><span>🍸 كوكتيل أجواء (3) - 4.00 دينار</span></div>
-    <div class="item"><span>❤️ موار قلب كبير - 3.50 دينار</span></div>
+    <div class="item"><span>🍸 كوكتيل أجواء (3) (4.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>❤️ موار قلب كبير (3.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
 
+    <!-- قسم الموهيتو -->
     <div class="category">🧊 الموهيتو والمشروبات</div>
-    <div class="item"><span>🍹 موهيتو روم - 2.50 دينار</span></div>
-    <div class="item"><span>⚡ كود رد - 2.00 دينار</span></div>
-    <div class="item"><span>🥤 كولا - 2.25 دينار</span></div>
+    <div class="item"><span>🍹 موهيتو روم (2.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>⚡ كود رد (2.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>🥤 كولا (2.25)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
 
+    <!-- قسم البوظة -->
     <div class="category">🍦 البوظة والسناكات</div>
-    <div class="item"><span>🍦 كيلو بوظة - 7.00 دينار</span></div>
-    <div class="item"><span>🍿 بوشار كبير - 1.50 دينار</span></div>
-    <div class="item"><span>🍔 برجر زنجر - 2.00 دينار</span></div>
+    <div class="item"><span>🍦 كيلو بوظة (7.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>🍿 بوشار كبير (1.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    <div class="item"><span>🍔 برجر زنجر (2.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
 
-    <!-- زر الواتساب برقمك -->
     <a href="https://wa.me/962789525274?text=مرحبا، أريد طلب من أجواء الواحة:" target="_blank">
         <button class="send-order">إرسال الطلب عبر واتساب 📲</button>
     </a>
