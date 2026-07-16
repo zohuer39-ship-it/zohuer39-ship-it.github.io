@@ -1,37 +1,87 @@
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <title>منيو أجواء الواحة</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
-        .menu-item { display: flex; align-items: center; background: white; margin: 10px 0; padding: 10px; border-radius: 10px; }
+        body { font-family: sans-serif; padding: 20px; direction: rtl; }
+        h1 { text-align: center; color: #333; }
+        .contact-info { text-align: center; color: #666; margin-bottom: 20px; }
+        .menu-item { display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
         .menu-item img { width: 50px; height: 50px; margin-left: 15px; border-radius: 5px; }
-        .controls { margin-right: auto; }
-        button { padding: 5px 10px; cursor: pointer; }
-        #send-btn { display: block; width: 100%; padding: 15px; background: #25D366; color: white; border: none; font-size: 18px; margin-top: 20px; border-radius: 10px; }
+        .item-details { flex-grow: 1; font-size: 18px; font-weight: bold; }
+        .item-price { color: #28a745; margin-right: 10px; }
+        .controls { margin-right: auto; display: flex; align-items: center; }
+        .controls input { width: 60px; padding: 5px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        #send-btn { display: block; width: 100%; padding: 12px; background-color: #28a745; color: white; border: none; font-size: 18px; font-weight: bold; cursor: pointer; text-align: center; margin-top: 25px; border-radius: 5px; transition: background-color 0.3s; }
+        #send-btn:hover { background-color: #218838; }
     </style>
 </head>
 <body>
 
     <h1>أجواء الواحة - إربد</h1>
-    <p>للتواصل: <a href="https://wa.me/962789525274">0789525274</a></p>
-
+    <div class="contact-info">للتواصل: 0789525274</div>
+    
     <div id="menu">
-        <!-- مثال لصنف: السعر الأصلي + 1 دينار -->
         <div class="menu-item">
-            <img src="https://via.placeholder.com/50" alt="صورة">
-            <span>برجر زنجر - 2.00 دينار</span>
+            <img src="https://via.placeholder.com/50" alt="صورة كريب">
+            <div class="item-details">
+                كريب نوتيلا
+                <span class="item-price">2.50 دينار</span>
+            </div>
             <div class="controls">
-                <input type="number" value="0" min="0" data-name="برجر زنجر" data-price="2.00" class="qty">
+                <label>الكمية:</label>
+                <input type="number" class="qty" value="0" min="0">
             </div>
         </div>
-        
+
         <div class="menu-item">
-            <img src="https://via.placeholder.com/50" alt="صورة">
-            <span>سكالوب - 2.00 دينار</span>
+            <img src="https://via.placeholder.com/50" alt="صورة كريب">
+            <div class="item-details">
+                كريب موز
+                <span class="item-price">2.00 دينار</span>
+            </div>
             <div class="controls">
-                <input type="number" value="0" min="0" data-name="سكالوب" data-price="2.00" class="qty">
+                <label>الكمية:</label>
+                <input type="number" class="qty" value="0" min="0">
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/50" alt="صورة كريب">
+            <div class="item-details">
+                كريب فراولة
+                <span class="item-price">2.80 دينار</span>
+            </div>
+            <div class="controls">
+                <label>الكمية:</label>
+                <input type="number" class="qty" value="0" min="0">
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/50" alt="صورة كريب">
+            <div class="item-details">
+                كريب كيندر
+                <span class="item-price">3.50 دينار</span>
+            </div>
+            <div class="controls">
+                <label>الكمية:</label>
+                <input type="number" class="qty" value="0" min="0">
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/50" alt="صورة كريب">
+            <div class="item-details">
+                كريب لوتس
+                <span class="item-price">3.25 دينار</span>
+            </div>
+            <div class="controls">
+                <label>الكمية:</label>
+                <input type="number" class="qty" value="0" min="0">
             </div>
         </div>
     </div>
@@ -40,20 +90,33 @@
 
     <script>
         document.getElementById('send-btn').addEventListener('click', function() {
-            let orderText = "طلب جديد من أجواء الواحة:%0A";
+            let orderText = "مرحباً، أود طلب التالي من منيو أجواء الواحة:";
             let total = 0;
-            document.querySelectorAll('.qty').forEach(input => {
-                let val = parseInt(input.value);
-                if (val > 0) {
-                    let name = input.getAttribute('data-name');
-                    let price = parseFloat(input.getAttribute('data-price'));
-                    orderText += `${name} (العدد: ${val}) - المجموع: ${(val * price).toFixed(2)} دينار%0A`;
-                    total += (val * price);
+            let items = document.querySelectorAll('.menu-item');
+            
+            items.forEach(function(item) {
+                let qty = item.querySelector('.qty').value;
+                let name = item.querySelector('.item-details').childNodes[0].textContent.trim();
+                let priceText = item.querySelector('.item-price').textContent;
+                
+                if (qty > 0) {
+                    let price = parseFloat(priceText);
+                    orderText += "\n- " + name + " (العدد: " + qty + ")";
+                    total += qty * price;
                 }
             });
-            orderText += `%0Aالإجمالي النهائي: ${total.toFixed(2)} دينار`;
-            window.location.href = "https://wa.me/962789525274?text=" + orderText;
+            
+            if (total > 0) {
+                orderText += "\n\nالإجمالي النهائي: " + total.toFixed(2) + " دينار";
+                let whatsappUrl = "https://wa.me/962789525274?text=" + encodeURIComponent(orderText);
+                window.location.href = whatsappUrl;
+            } else {
+                alert("الرجاء اختيار صنف واحد على الأقل.");
+            }
         });
     </script>
+
 </body>
 </html>
+
+```
