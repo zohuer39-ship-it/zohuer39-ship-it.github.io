@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>منيو أجواء الواحة</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+        .menu-item { display: flex; align-items: center; background: white; margin: 10px 0; padding: 10px; border-radius: 10px; }
+        .menu-item img { width: 50px; height: 50px; margin-left: 15px; border-radius: 5px; }
+        .controls { margin-right: auto; }
+        button { padding: 5px 10px; cursor: pointer; }
+        #send-btn { display: block; width: 100%; padding: 15px; background: #25D366; color: white; border: none; font-size: 18px; margin-top: 20px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>أجواء الواحة - إربد</h1>
+    <p>للتواصل: <a href="https://wa.me/962789525274">0789525274</a></p>
+
+    <div id="menu">
+        <!-- مثال لصنف: السعر الأصلي + 1 دينار -->
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/50" alt="صورة">
+            <span>برجر زنجر - 2.00 دينار</span>
+            <div class="controls">
+                <input type="number" value="0" min="0" data-name="برجر زنجر" data-price="2.00" class="qty">
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/50" alt="صورة">
+            <span>سكالوب - 2.00 دينار</span>
+            <div class="controls">
+                <input type="number" value="0" min="0" data-name="سكالوب" data-price="2.00" class="qty">
+            </div>
+        </div>
+    </div>
+
+    <button id="send-btn">إرسال الطلب عبر واتساب</button>
+
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            let orderText = "طلب جديد من أجواء الواحة:%0A";
+            let total = 0;
+            document.querySelectorAll('.qty').forEach(input => {
+                let val = parseInt(input.value);
+                if (val > 0) {
+                    let name = input.getAttribute('data-name');
+                    let price = parseFloat(input.getAttribute('data-price'));
+                    orderText += `${name} (العدد: ${val}) - المجموع: ${(val * price).toFixed(2)} دينار%0A`;
+                    total += (val * price);
+                }
+            });
+            orderText += `%0Aالإجمالي النهائي: ${total.toFixed(2)} دينار`;
+            window.location.href = "https://wa.me/962789525274?text=" + orderText;
+        });
+    </script>
+</body>
+</html>
