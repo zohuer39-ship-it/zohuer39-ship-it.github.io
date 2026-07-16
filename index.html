@@ -1,105 +1,66 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>قائمة أجواء الواحة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أجواء الواحة - عصائر ومرطبات</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #fdf5e6; text-align: center; }
-        h1, h2 { color: #2e7d32; }
-        .contact { font-size: 1.2em; font-weight: bold; background: #fff; padding: 10px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #2e7d32; display: inline-block; }
-        .menu-section { margin-bottom: 25px; border-bottom: 2px solid #2e7d32; padding-bottom: 15px; }
-        .item { display: flex; justify-content: space-between; align-items: center; margin: 10px auto; padding: 10px; background: #fff; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 500px; }
-        input[type="number"] { width: 50px; padding: 5px; margin-right: 10px; }
-        button { background-color: #2e7d32; color: white; padding: 15px 30px; font-size: 1.2em; border: none; border-radius: 10px; cursor: pointer; margin-top: 20px; }
-        button:hover { background-color: #1b5e20; }
+        body { font-family: sans-serif; text-align: center; background-color: #fff9e6; padding: 20px; }
+        .menu-container { max-width: 500px; margin: auto; }
+        .item { background: white; margin-bottom: 10px; padding: 10px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; }
+        h1 { color: #d4a017; }
+        h2 { color: #d4a017; margin-top: 20px; }
+        button { background-color: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <h1>🌴 أجواء الواحة - عصائر ومرطبات</h1>
-    <div class="contact">
-        📞 للطلب والتواصل: 0789525274
+    <h1>أجواء الواحة</h1>
+
+    <div class="menu-container">
+        <h2>الأفوكادو والكوكتيل</h2>
+        <div class="item"><span>أفوكادو سبيشل كبير (3.75)</span><button>اطلب</button></div>
+        <div class="item"><span>أفوكادو سبيشل صغير (3.25)</span><button>اطلب</button></div>
+        <div class="item"><span>أفوكادو سادة كبير (3.00)</span><button>اطلب</button></div>
+        <div class="item"><span>أفوكادو سادة صغير (2.50)</span><button>اطلب</button></div>
+        <div class="item"><span>كوكتيل سبيشل كبير (3.50)</span><button>اطلب</button></div>
+
+        <h2>قسم العوار والخلطات الخاصة</h2>
+        <div class="item"><span>كوكتيل أجواء (3) (4.00)</span><button>اطلب</button></div>
+        <div class="item"><span>كوكتيل أجواء (2) (3.00)</span><button>اطلب</button></div>
+        <div class="item"><span>موار قلب كبير (3.50)</span><button>اطلب</button></div>
+
+        <h2>الموهيتو والمشروبات الباردة</h2>
+        <div class="item"><span>موهيتو روم (2.50)</span><button>اطلب</button></div>
+        <div class="item"><span>موهيتو صوبيا (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>بي أم موهيتو كبير (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>موهيتو ماتريكس (1.75)</span><button>اطلب</button></div>
+        <div class="item"><span>سلاش (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>كولا (2.25)</span><button>اطلب</button></div>
+        <div class="item"><span>كود رد (2.00)</span><button>اطلب</button></div>
+
+        <h2>سلطات الفواكه والبوظة</h2>
+        <div class="item"><span>سلطة فواكه أجواء (4.00)</span><button>اطلب</button></div>
+        <div class="item"><span>سلطة فواكه سبيشل (3.50)</span><button>اطلب</button></div>
+        <div class="item"><span>كيلو بوظة (7.00)</span><button>اطلب</button></div>
+        <div class="item"><span>نصف كيلو بوظة (4.00)</span><button>اطلب</button></div>
+        <div class="item"><span>بوظة سكوب (1) (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>بوظة صحن بسكوت (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>بوظة بوري (1.50)</span><button>اطلب</button></div>
+        <div class="item"><span>بوظة سكوب صغير (1.50)</span><button>اطلب</button></div>
+        <div class="item"><span>بوظة سوفت صغير (1.25)</span><button>اطلب</button></div>
+        <div class="item"><span>بوشار كبير (1.50)</span><button>اطلب</button></div>
+
+        <h2>الوجبات السريعة</h2>
+        <div class="item"><span>برجر زنجر (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>تشكن فرايز (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>ذرة (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>سكالوب (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>سكالوب كبير (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>أكوكيات كبير (2.50)</span><button>اطلب</button></div>
+        <div class="item"><span>سلاش سوور (2.00)</span><button>اطلب</button></div>
+        <div class="item"><span>ذرة سادة سبيشل (3.00)</span><button>اطلب</button></div>
     </div>
 
-    <form id="orderForm">
-        <div class="menu-section">
-            <h2>🥑 الأفوكادو والكوكتيل</h2>
-            <div class="item">
-                <span>1. أفوكادو سبيشل كبير (3.75 د.أ)</span>
-                <input type="number" id="item1" min="0" value="0" data-name="أفوكادو سبيشل كبير" data-price="3.75">
-            </div>
-            <div class="item">
-                <span>2. أفوكادو سبيشل صغير (3.25 د.أ)</span>
-                <input type="number" id="item2" min="0" value="0" data-name="أفوكادو سبيشل صغير" data-price="3.25">
-            </div>
-            <div class="item">
-                <span>3. أفوكادو ساده كبير (3.00 د.أ)</span>
-                <input type="number" id="item3" min="0" value="0" data-name="أفوكادو ساده كبير" data-price="3.00">
-            </div>
-            <div class="item">
-                <span>4. أفوكادو ساده صغير (2.50 د.أ)</span>
-                <input type="number" id="item4" min="0" value="0" data-name="أفوكادو ساده صغير" data-price="2.50">
-            </div>
-        </div>
-
-        <div class="menu-section">
-            <h2>🍔 الوجبات السريعة</h2>
-            <div class="item">
-                <span>5. برغر زنجر (2.00 د.أ)</span>
-                <input type="number" id="item5" min="0" value="0" data-name="برغر زنجر" data-price="2.00">
-            </div>
-            <div class="item">
-                <span>6. تشكن فرايز (2.00 د.أ)</span>
-                <input type="number" id="item6" min="0" value="0" data-name="تشكن فرايز" data-price="2.00">
-            </div>
-            <div class="item">
-                <span>7. سكالوب (2.00 د.أ)</span>
-                <input type="number" id="item7" min="0" value="0" data-name="سكالوب" data-price="2.00">
-            </div>
-            <div class="item">
-                <span>8. ذرة (2.00 د.أ)</span>
-                <input type="number" id="item8" min="0" value="0" data-name="ذرة" data-price="2.00">
-            </div>
-        </div>
-
-        <button type="button" onclick=" sendOrder()">إرسال الطلب عبر واتساب</button>
-    </form>
-
-    <script>
-        function sendOrder() {
-            let inputs = document.querySelectorAll('#orderForm input[type="number"]');
-            let message = "مرحباً، أود طلب التالي:\n\n";
-            let total = 0;
-            let hasItems = false;
-
-            inputs.forEach(input => {
-                let quantity = parseInt(input.value);
-                if (quantity > 0) {
-                    hasItems = true;
-                    let name = input.getAttribute('data-name');
-                    let price = parseFloat(input.getAttribute('data-price'));
-                    let itemTotal = quantity * price;
-                    total += itemTotal;
-                    message += `- ${name} × ${quantity} (${itemTotal.toFixed(2)} د.أ)\n`;
-                }
-            });
-
-            if (!hasItems) {
-                alert("الرجاء اختيار صنف واحد على الأقل.");
-                return;
-            }
-
-            message += `\nالمجموع الكلي: ${total.toFixed(2)} د.أ`;
-            
-            let encodedMessage = encodeURIComponent(message);
-            let phoneNumber = "962789525274";
-            let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
 </body>
 </html>
-
-```
