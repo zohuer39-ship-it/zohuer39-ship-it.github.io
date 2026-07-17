@@ -1,63 +1,80 @@
-والأسع
-    "P01": {"name": "🍹 كوكتيل أجواء (3)", "price": 4.0},
-    "P02": {"name": "🍹 كوكتيل أجواء (2)", "price": 3.0},
-    "P03": {"name": "💗 حوار قلب كبير", "price": 3.5},
-    "P04": {"name": "🥑 أفوكادو سبيشل كبير", "price": 3.75},
-    "P05": {"name": "🥑 أفوكادو سبيشل صغير", "price": 3.25},
-    "P06": {"name": "🥑 أفوكادو ساده كبير", "price": 3.0},
-    "P07": {"name": "🥑 أفوكادو ساده صغير", "price": 2.5},
-    "P08": {"name": "🥤 كوكتيل سبيشل كبير", "price": 3.5},
-    "P09": {"name": "🥤 كوكتيل سبيشل صغير", "price": 3.0},
-    "P10": {"name": "🍊 عصير فريش كبير", "price": 3.0},
-    "P11": {"name": "🍊 عصير فريش صغير", "price": 2.5},
-    "P12": {"name": "🍃 موهيتو يوم (1.5)", "price": 2.5},
-    "P13": {"name": "🍃 موهيتو سوبر", "price": 2.0},
-    "P14": {"name": "🍃 بي أم موهيتو كبير", "price": 2.0},
-    "P15": {"name": "🍃 موهيتو ماليبيس", "price": 1.75},
-    "P16": {"name": "🍧 سلاش", "price": 2.0},
-    "P17": {"name": "🥤 كولا (1.25)", "price": 2.25},
-    "P18": {"name": "⚡ كود رد", "price": 2.0},
-    "P19": {"name": "🥗 سلطة فواكه أجواء", "price": 4.0},
-    "P20": {"name": "🥗 سلطة فواكه سبيشل", "price": 3.5},
-    "P21": {"name": "🍨 كيلو بوظة", "price": 7.0},
-    "P22": {"name": "🍨 نصف كيلو بوظة", "price": 4.0},
-    "P23": {"name": "🍦 بوظة سكوب (1)", "price": 2.0},
-    "P24": {"name": "🍦 بوظة صحن سكوت (1)", "price": 2.0},
-    "P25": {"name": "🍦 بوظة بوري", "price": 1.5},
-    "P26": {"name": "🍦 بوظة سكوب صغير", "price": 1.5},
-    "P27": {"name": "🍦 بوظة سوفت صغير", "price": 1.25},
-    "P28": {"name": "🍿 بوشار كبير", "price": 1.5},
-    "P29": {"name": "🍔 برغر زنجر", "price": 2.0},
-    "P30": {"name": "🍟 تشكن فرايز", "price": 2.0},
-    "P31": {"name": "🌽 ذرة", "price": 2.0},
-    "P32": {"name": "🍗 سكلوب كبير", "price": 2.0},
-    "P33": {"name": "🌽 ذرة ساده سبيشل", "price": 3.0}
-}
 
-def order_system():
-    order_list = []
-    total_price = 0
-    
-    print("--- نظام طلبات أجواء الواحة ---")
-    print("أدخل الكود ثم الكمية (اكتب 'done' للإنهاء)")
-    
-    while True:
-        code = input("\nأدخل كود الصنف: ").upper()
-        if code == 'DONE': break
-        
-        if code in menu:
-            qty = int(input(f"كمية {menu[code]['name']}: "))
-            price = menu[code]['price'] * qty
-            total_price += price
-            order_list.append(f"{menu[code]['name']} x {qty}")
-        else:
-            print("❌ كود غير موجود، حاول مجدداً!")
+ <html lang="ar" dir="rtl">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>
+مطعم وجبات وصناكات </title>
+ <style>
+ :root {
+ –primary: #e63946; –bg: #f7f7f7; –card: #ffffff;
+        }
+      Body {
+        Font-family: system-ui, Arial, sans-serif; background: var(--bg); color: #222; margin: 0; padding: 0; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+      Header { text-align: center; padding: 1.2rem 0; color: var(--primary); }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220, 1fr)); gap: 1rem; }
+      .card { background: var(--card); border-radius:14px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;
+      }
+ .card img { width: 100%; height:160px; object-fit: cover; }
+      .card .info { padding: 0.8rem 0.9rem; flex: 1; display: flex; flex-direction: column;}
+      . card h3 { margin: 0 0 .3rem; font-size: 1.05rem; color: #222; }
+      . card p { margin: 0; color: #555; font-size: 0.95rem; }
+ .card .actions { display: flex; gap: .4rem; margin-top: auto;}
+      Button { background: var(--primary); color: #fff; border: none; padding: .5rem .7rem; border-radius: 8px; cursor: pointer; }
+ Button:hover { background: #c92d3c; }
+ . cart { position: sticky; bottom: 0; background: #fff; padding: .8rem 1rem; border-radius: 12px 12px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+      .total { font-weight: 600; }
+      @media (max-width: 600px) {
+        Header h1 { font-size: 1.4rem; }
+        .card img { height:140px; }
+ }
+    </style>
+  </head>
+  <body> <header>
+    <h1>مطعم وجبات وصناكات</h1>
+<p>اختار صنفك المفضل وأرسل طلبك بسهولة</p>
+  </header> <div class="container">
+    <div class="grid" id="menuGrid">
+ <!—منتج 1  <!—كرسي 1 
+        <div class="card" data item-name="برجر زنجر" data price="3">
+ <img src="pngwing.com.png" alt="برجر زنجر" />
+ <div class="info">
+ <h3>برجر زنجر</h3>
+ <p>سعر: 3 دنانير</p>
+ <div class="actions">
+ <button class="dec">-</button>
+ <span class="qty">0</span>
+ <button class="inc">+</button>
+ </div>
+ </div>
+ </div> <!—كرسي 2  <div class="card" البيانات الرقمية="تشيكن فرايز" البيانات الرقمية للسعر="2">
+ <img src="chickenfries.png" alt="تشيكن فرايز" />
+ <div class="info">
+ <h3>تشيكن فرايز </h3>
+ <p>سعر: 2 دينار</p>
+ <div class="actions">
+ <button class="dec">-</button>
+ <span class="qty">0</span>
+  <button class="inc">+</button>
+ </div>
+ </div>
+ </div> <!—منتج 3  <div class="card" data item-name="ذرة" data price="1">
+ <img src="corn.png" alt="ذرة" />
+ <div class="info">
+ <h3>ذرة مشوية</h3>
+ <p>سعر: 1 دينار</p>
+ <div class="actions">
+ <button class="dec">-</button>
+ <span class="qty">0</span>
+<button class="inc">+</button>
+ </div>
+ </div>
+ </div> <!—سلة الطلبات الثابتة أسفل الصفحة  <div class="cart" id="cartBox">
+ <div>المجموع: <span class="total" id="totalPrice">0</span></div>
+ <button id="orderBtn">إرسال الطلب عبر واتساب</button>
+ </div> </div> </body>
+ </html>
 
-    print("\n" + "="*30)
-    print("📋 ملخص الطلب للواتساب:")
-    print("\n".join(order_list))
-    print(f"\n💰 المجموع النهائي: {total_price} دينار")
-    print("📞 للتواصل: 0789525274")
-    print("="*30)
+Product.querySelector("p").innerText; const originalPrice = parseFloat(priceText.match(/+/); const finalPrice = originalPrice + EXTRA PRICE; const subTotal = finalPrice * qty; total += subTotal; orderText += ${name}\nالكمية: ${qty}\nالسعر: ${subTotal.toFixed(2)} JD\n\n; } ); totalPrice.innerText = total `.toFixed(2) + " JD"; return orderText + "المجموع النهائي: " + total.toFixed(2) + " JD"; } products.forEach product => { const plus = product.querySelector(".inc"); const minus = product.querySelector(".dec"); const qty = product.querySelector(".qty"); ]; plus.onclick = () => { qty.innerText = parseInt(qty.innerText) + 1; calculate total();}; minus.onclick = () => { let Q = parseInt(qty.innerText); if (Q > 0) { qty.innerText = Q – 1; calculate total();} }; }); order Btn.onclick = () => { const text = calculate total(); if (text.indexOf("الكمية") === -1) { alert("اختر صنف واحد على الأقل"); return; }; const phone = "9627XXXXXXXX"; window.open(https://wa.me/+phone+"? +encodeURIComponent(text),"_blank");};]; </script>
 
-order_system()
