@@ -1,52 +1,63 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أجواء الواحة - طلبات أونلاين</title>
-    <style>
-        body { font-family: sans-serif; background-color: #fdf6e3; padding: 10px; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .category { font-weight: bold; color: #d35400; margin: 20px 0 10px; border-bottom: 2px solid #d35400; }
-        .item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f1f1; }
-        .controls { display: flex; align-items: center; gap: 5px; }
-        input { width: 40px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
-        button { background-color: #27ae60; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
-        .send-order { background: #25d366; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
-    </style>
-</head>
-<body>
+والأسع
+    "P01": {"name": "🍹 كوكتيل أجواء (3)", "price": 4.0},
+    "P02": {"name": "🍹 كوكتيل أجواء (2)", "price": 3.0},
+    "P03": {"name": "💗 حوار قلب كبير", "price": 3.5},
+    "P04": {"name": "🥑 أفوكادو سبيشل كبير", "price": 3.75},
+    "P05": {"name": "🥑 أفوكادو سبيشل صغير", "price": 3.25},
+    "P06": {"name": "🥑 أفوكادو ساده كبير", "price": 3.0},
+    "P07": {"name": "🥑 أفوكادو ساده صغير", "price": 2.5},
+    "P08": {"name": "🥤 كوكتيل سبيشل كبير", "price": 3.5},
+    "P09": {"name": "🥤 كوكتيل سبيشل صغير", "price": 3.0},
+    "P10": {"name": "🍊 عصير فريش كبير", "price": 3.0},
+    "P11": {"name": "🍊 عصير فريش صغير", "price": 2.5},
+    "P12": {"name": "🍃 موهيتو يوم (1.5)", "price": 2.5},
+    "P13": {"name": "🍃 موهيتو سوبر", "price": 2.0},
+    "P14": {"name": "🍃 بي أم موهيتو كبير", "price": 2.0},
+    "P15": {"name": "🍃 موهيتو ماليبيس", "price": 1.75},
+    "P16": {"name": "🍧 سلاش", "price": 2.0},
+    "P17": {"name": "🥤 كولا (1.25)", "price": 2.25},
+    "P18": {"name": "⚡ كود رد", "price": 2.0},
+    "P19": {"name": "🥗 سلطة فواكه أجواء", "price": 4.0},
+    "P20": {"name": "🥗 سلطة فواكه سبيشل", "price": 3.5},
+    "P21": {"name": "🍨 كيلو بوظة", "price": 7.0},
+    "P22": {"name": "🍨 نصف كيلو بوظة", "price": 4.0},
+    "P23": {"name": "🍦 بوظة سكوب (1)", "price": 2.0},
+    "P24": {"name": "🍦 بوظة صحن سكوت (1)", "price": 2.0},
+    "P25": {"name": "🍦 بوظة بوري", "price": 1.5},
+    "P26": {"name": "🍦 بوظة سكوب صغير", "price": 1.5},
+    "P27": {"name": "🍦 بوظة سوفت صغير", "price": 1.25},
+    "P28": {"name": "🍿 بوشار كبير", "price": 1.5},
+    "P29": {"name": "🍔 برغر زنجر", "price": 2.0},
+    "P30": {"name": "🍟 تشكن فرايز", "price": 2.0},
+    "P31": {"name": "🌽 ذرة", "price": 2.0},
+    "P32": {"name": "🍗 سكلوب كبير", "price": 2.0},
+    "P33": {"name": "🌽 ذرة ساده سبيشل", "price": 3.0}
+}
 
-<div class="container">
-    <h1 style="text-align: center;">🌴 أجواء الواحة 🌴</h1>
+def order_system():
+    order_list = []
+    total_price = 0
+    
+    print("--- نظام طلبات أجواء الواحة ---")
+    print("أدخل الكود ثم الكمية (اكتب 'done' للإنهاء)")
+    
+    while True:
+        code = input("\nأدخل كود الصنف: ").upper()
+        if code == 'DONE': break
+        
+        if code in menu:
+            qty = int(input(f"كمية {menu[code]['name']}: "))
+            price = menu[code]['price'] * qty
+            total_price += price
+            order_list.append(f"{menu[code]['name']} x {qty}")
+        else:
+            print("❌ كود غير موجود، حاول مجدداً!")
 
-    <!-- قسم الأفوكادو -->
-    <div class="category">🥑 الأفوكادو والكوكتيل</div>
-    <div class="item"><span>🥑 أفوكادو سبيشل كبير (3.75)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>🥑 أفوكادو سبيشل صغير (3.25)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>🍹 كوكتيل سبيشل كبير (3.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
+    print("\n" + "="*30)
+    print("📋 ملخص الطلب للواتساب:")
+    print("\n".join(order_list))
+    print(f"\n💰 المجموع النهائي: {total_price} دينار")
+    print("📞 للتواصل: 0789525274")
+    print("="*30)
 
-    <!-- قسم العوار -->
-    <div class="category">🍹 قسم العوار والخلطات</div>
-    <div class="item"><span>🍸 كوكتيل أجواء (3) (4.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>❤️ موار قلب كبير (3.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-
-    <!-- قسم الموهيتو -->
-    <div class="category">🧊 الموهيتو والمشروبات</div>
-    <div class="item"><span>🍹 موهيتو روم (2.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>⚡ كود رد (2.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>🥤 كولا (2.25)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-
-    <!-- قسم البوظة -->
-    <div class="category">🍦 البوظة والسناكات</div>
-    <div class="item"><span>🍦 كيلو بوظة (7.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>🍿 بوشار كبير (1.50)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-    <div class="item"><span>🍔 برجر زنجر (2.00)</span><div class="controls"><input type="number" value="0" min="0"><button>إضافة</button></div></div>
-
-    <a href="https://wa.me/962789525274?text=مرحبا، أريد طلب من أجواء الواحة:" target="_blank">
-        <button class="send-order">إرسال الطلب عبر واتساب 📲</button>
-    </a>
-</div>
-
-</body>
-</html>
+order_system()
